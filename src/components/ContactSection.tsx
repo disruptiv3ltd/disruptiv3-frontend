@@ -2,6 +2,7 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { Offices } from '@/components/Offices'
+import Link from 'next/link'
 
 export function ContactSection() {
   return (
@@ -17,14 +18,57 @@ export function ContactSection() {
                 Say Hi
               </Button>
             </div>
-            <div className="mt-10 border-t border-white/10 pt-10">
-              <h3 className="font-display text-base font-semibold text-white">
-                Our offices
-              </h3>
-              <Offices
-                invert
-                className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2"
-              />
+            <div className="mt-10 border-t border-white/40 pt-10">
+              <div className=" grid grid-cols-2 gap-8">
+                <span>
+                  <h2 className="font-display text-base font-semibold text-white">
+                    Email us
+                  </h2>
+                  <dl className="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
+                    {[['Information', 'info@disruptiv3.xyz']].map(
+                      ([label, email]) => (
+                        <div key={email}>
+                          <dt className="font-semibold text-neutral-50">
+                            {label}
+                          </dt>
+                          <dd>
+                            <Link
+                              href={`mailto:${email}`}
+                              className="text-neutral-400 hover:text-neutral-50"
+                            >
+                              {email}
+                            </Link>
+                          </dd>
+                        </div>
+                      ),
+                    )}
+                  </dl>
+                </span>
+                <span>
+                  <h2 className="font-display text-base font-semibold text-white">
+                    Telegram
+                  </h2>
+                  <dl className="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
+                    {[['Direct Message', 'disruptiv3']].map(
+                      ([label, username]) => (
+                        <div key={username}>
+                          <dt className="font-semibold text-neutral-50">
+                            {label}
+                          </dt>
+                          <dd>
+                            <Link
+                              href={`https://t.me/${username}`}
+                              className="text-neutral-400 hover:text-neutral-50"
+                            >
+                              @{username}
+                            </Link>
+                          </dd>
+                        </div>
+                      ),
+                    )}
+                  </dl>
+                </span>
+              </div>
             </div>
           </div>
         </div>
