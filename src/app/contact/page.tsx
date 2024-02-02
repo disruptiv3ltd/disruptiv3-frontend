@@ -21,22 +21,24 @@ export function ContactDetails() {
       <Border className="mt-16 grid grid-cols-2 gap-8 pt-16">
         <span>
           <h2 className="font-display text-base font-semibold text-neutral-950">
-            Email us
+            Discord
           </h2>
           <dl className="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
-            {[['Information', 'info@disruptiv3.xyz']].map(([label, email]) => (
-              <div key={email}>
-                <dt className="font-semibold text-neutral-950">{label}</dt>
-                <dd>
-                  <Link
-                    href={`mailto:${email}`}
-                    className="text-neutral-600 hover:text-neutral-950"
-                  >
-                    {email}
-                  </Link>
-                </dd>
-              </div>
-            ))}
+            {[['Direct Message', '833853967346696193']].map(
+              ([label, username]) => (
+                <div key={username}>
+                  <dt className="font-semibold text-neutral-950">{label}</dt>
+                  <dd>
+                    <Link
+                      href={`https://discordapp.com/users/${username}`}
+                      className="text-neutral-600 hover:text-neutral-950"
+                    >
+                      @disruptiv3xyz
+                    </Link>
+                  </dd>
+                </div>
+              ),
+            )}
           </dl>
         </span>
         <span>

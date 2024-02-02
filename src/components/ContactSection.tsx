@@ -22,21 +22,21 @@ export function ContactSection() {
               <div className=" grid grid-cols-2 gap-8">
                 <span>
                   <h2 className="font-display text-base font-semibold text-white">
-                    Email us
+                    Discord
                   </h2>
                   <dl className="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
-                    {[['Information', 'info@disruptiv3.xyz']].map(
-                      ([label, email]) => (
-                        <div key={email}>
+                    {[['Direct Message', '833853967346696193']].map(
+                      ([label, username]) => (
+                        <div key={username}>
                           <dt className="font-semibold text-neutral-50">
                             {label}
                           </dt>
                           <dd>
                             <Link
-                              href={`mailto:${email}`}
+                              href={`https://discordapp.com/users/${username}`}
                               className="text-neutral-400 hover:text-neutral-50"
                             >
-                              {email}
+                              @disruptiv3xyz
                             </Link>
                           </dd>
                         </div>
